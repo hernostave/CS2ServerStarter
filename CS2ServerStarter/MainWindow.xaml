@@ -1,0 +1,65 @@
+﻿<Window x:Class="CS2ServerStarter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CS2ServerStarter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="358.2" Width="814" MinWidth="814" MinHeight="358.2" MaxHeight="358.2" MaxWidth="814">
+    <Grid>
+        <TabControl>
+            <TabItem Header="CS2ServerStarter">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="159*"/>
+                        <ColumnDefinition Width="635*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="StartButton" Content="Start" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Height="54" Width="134" Click="StartButton_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Settings">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25*"/>
+                        <RowDefinition Height="317*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="329*"/>
+                        <ColumnDefinition Width="61*"/>
+                        <ColumnDefinition Width="14*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="UpdateConfigButton" Content="SaveConfig" HorizontalAlignment="Center" Margin="0,23,0,0" VerticalAlignment="Top" Height="52" Width="122" Click="UpdateConfigButton_Click" Grid.Column="1" Grid.RowSpan="2"/>
+                    <Grid HorizontalAlignment="Left" Height="85" Margin="10,13,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="609" MinWidth="609" MinHeight="85">
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Map: " VerticalAlignment="Center"/>
+                        <TextBox x:Name="TextBoxMap" HorizontalAlignment="Left" Margin="58,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Height="21"/>
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Args: " VerticalAlignment="Bottom"/>
+                        <TextBox x:Name="TextBoxArgs" HorizontalAlignment="Left" Margin="58,0,0,0" TextWrapping="Wrap" Text="-dedicated -console" VerticalAlignment="Bottom" Width="550" Height="19"/>
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="CS2 Path: " VerticalAlignment="Top"/>
+                        <TextBox x:Name="TextBoxCS2Path" HorizontalAlignment="Left" Margin="58,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="550"/>
+                        <ComboBox x:Name="ComboBoxGameType" HorizontalAlignment="Left" Margin="304,0,0,0" VerticalAlignment="Center" Width="102" Height="21">
+                            <ComboBoxItem Content="0"/>
+                            <ComboBoxItem Content="1"/>
+                            <ComboBoxItem Content="2"/>
+                            <ComboBoxItem Content="3"/>
+                            <ComboBoxItem Content="4"/>
+                            <ComboBoxItem Content="5"/>
+                            <ComboBoxItem Content="6"/>
+                        </ComboBox>
+                        <ComboBox x:Name="ComboBoxGameMode" HorizontalAlignment="Left" Margin="506,0,0,0" VerticalAlignment="Center" Width="102" Height="21">
+                            <ComboBoxItem Content="0"/>
+                            <ComboBoxItem Content="1"/>
+                            <ComboBoxItem Content="2"/>
+                            <ComboBoxItem Content="3"/>
+                            <ComboBoxItem Content="4"/>
+                            <ComboBoxItem Content="5"/>
+                            <ComboBoxItem Content="6"/>
+                        </ComboBox>
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="GameType: " VerticalAlignment="Center" Margin="237,0,0,0"/>
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="GameMode: " VerticalAlignment="Center" Margin="423,0,0,0"/>
+                    </Grid>
+                    <Image HorizontalAlignment="Left" Height="202" Margin="10,88,0,0" Grid.Row="1" VerticalAlignment="Top" Width="609" Source="/GamemodeTable.PNG"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
